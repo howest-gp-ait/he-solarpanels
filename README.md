@@ -66,19 +66,20 @@ Je dient deze retourwaard op te vangen en te bekijken :
     * stuurt de server NIETS naar de client terug  
     * roep je de bestaande methode PopulateStations op  
     * zorg je er voor dat geen enkel station geselecteerd staat in cmbStations  
-  * Is de retourwaarde false, dan
-o	Stuurt de server de tekst “ERROR#@@#” terug naar de client
-o	Roep je de bestaande methode PopulateStations op
-o	Je kijkt na welke waarde in de outputparameter (tweede argument) zit : 
-	Is deze null, dan roep je de methode PopulateStations op en zorg je er voor dat geen enkel station geselecteerd staat in cmbStations
-	Is deze NIET null, dan roep je de methode PopulateStations op en zorg je er voor dat in cmbStations dit station (client) geselecteerd staat en zorg je er meteen ook voor dat alle panelen van dat station in lstPanels getoond worden.
-•	Is de retourwaarde true, dan
-o	Stuurt de server de tekst “OK#@@#” terug naar de client
-o	Roep je de bestaande methode PopulateStations op
-o	Je kijkt na welke waarde in de outputparameter (tweede argument) zit : 
-	Is deze null (wat uiteraard onwaarschijnlijk is), dan roep je de methode PopulateStations op en zorg je er voor dat geen enkel station geselecteerd staat in cmbStations
-	Is deze NIET null, dan roep je de methode PopulateStations op en zorg je er voor dat in cmbStations dit station (client) geselecteerd staat en zorg je er meteen ook voor dat alle panelen van dat station in lstPanels getoond worden.
-Demo met 1 server en 3 solarpanel stations
+  * Is de retourwaarde false, dan  
+    * Stuurt de server de tekst “ERROR#@@#” terug naar de client  
+    * Roep je de bestaande methode PopulateStations op  
+    * Je kijkt na welke waarde in de outputparameter (tweede argument) zit :   
+      * Is deze null, dan roep je de methode PopulateStations op en zorg je er voor dat geen enkel station geselecteerd staat in cmbStations  
+      * Is deze NIET null, dan roep je de methode PopulateStations op en zorg je er voor dat in cmbStations dit station (client) geselecteerd staat en zorg je er meteen ook voor dat alle panelen van dat station in lstPanels getoond worden.  
+  * Is de retourwaarde true, dan  
+    * Stuurt de server de tekst “OK#@@#” terug naar de client  
+    * Roep je de bestaande methode PopulateStations op  
+    * Je kijkt na welke waarde in de outputparameter (tweede argument) zit :   
+      * Is deze null (wat uiteraard onwaarschijnlijk is), dan roep je de methode PopulateStations op en zorg je er voor dat geen enkel station geselecteerd staat in cmbStations  
+      * Is deze NIET null, dan roep je de methode PopulateStations op en zorg je er voor dat in cmbStations dit station (client) geselecteerd staat en zorg je er meteen ook voor dat alle panelen van dat station in lstPanels getoond worden.  
+  
+## Demo met 1 server en 3 solarpanel stations  
  
 
 
