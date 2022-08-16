@@ -40,22 +40,22 @@ We gaan hier enkel “luisteren” : wanneer effectief een bericht binnenkomt, d
 In deze methode doe je volgende zaken :   
   * Je leest het geselecteerde IP nummer uit (cmbIps)  
   * Je leest het geselecteerde poortnummer uit (cmbPorts)  
-  * Je maakt een IPEndPoint aan (gebruik hiervoor de globale variabele mainEndPoint)  
-  * Je maakt een Socket aan (gebruik hiervoor de globale variabele mainSocket) waarmee je straks continu gaat “luisteren” naar eventueel binnenkomende berichten.  
-  * Voorzie de nodige logica (denk aan – oneindige – lussen) om nu effectief te gaan “luisteren”.  Hou hierbij rekening met de globale variabele serverOnline die de waarde TRUE moet bevatten voor je gaat “luisteren”.  Zelf hoef je geen waarde toe te kennen aan deze variabele : dit wordt al gedaan in andere – reeds bestaande – methoden.  En zorg er uiteraard ook voor dat wanneer deze globale variabele de waarde FALSE bevat/krijgt, je uit eventuele lussen valt (zodat je programma weer verder kan).
-  * Als een client een bericht verstuurt naar je server dan stuur je dat meteen door naar de methode HandleClientCall (in de vorm van een socket) (zie beschrijving hieronder).  
+  * Je maakt een IPEndPoint aan (gebruik hiervoor de globale variabele **mainEndPoint**)  
+  * Je maakt een Socket aan (gebruik hiervoor de globale variabele **mainSocket**) waarmee je straks continu gaat “luisteren” naar eventueel binnenkomende berichten.  
+  * Voorzie de nodige logica (denk aan – oneindige – lussen) om nu effectief te gaan “luisteren”.  Hou hierbij rekening met de globale variabele **serverOnline** die de waarde TRUE moet bevatten voor je gaat “luisteren”.  Zelf hoef je geen waarde toe te kennen aan deze variabele : dit wordt al gedaan in andere – reeds bestaande – methoden.  En zorg er uiteraard ook voor dat wanneer deze globale variabele de waarde FALSE bevat/krijgt, je uit eventuele lussen valt (zodat je programma weer verder kan).
+  * Als een client een bericht verstuurt naar je server dan stuur je dat meteen door naar de methode **HandleClientCall** (in de vorm van een socket) (zie beschrijving hieronder).  
 Deze methode zal dan het nodige doen om het bericht “uit te pakken”, het te (laten) interpreteren en (grafisch) de nodige acties zal ondernemen.
   
   
 ### De methode HandleClientCall(Socket clientCall)  
   
-Deze methode zal enkel opgeroepen worden vanuit de methode StartListening (zie hierboven).  
+Deze methode zal enkel opgeroepen worden vanuit de methode **StartListening()** (zie hierboven).  
 De methode ontvangt 1 parameter : een socket object waarin het bericht zit die door de client naar de server werd verstuurd.  
 Denk er aan dat elk bericht dat door een client naar de server wordt verstuurd eindigt met het “end of message” symbool “#@@#”.  
 **Opgelet** : je hebt dit symbool enkel nodig om te weten waar het bericht eindigt, **maar verwijder dit symbool zelf NIET !**  
   
 Eenmaal je het bericht in stringformaat hebt stuur je het gewoon door naar de bestaande **solarPanelService.ProcessMessage(string message, out string stationId)** methode.
-Je haalt zelf het bericht niet uit elkaar (je hoeft dus met andere woorden zelf de string niet te splitten) : deze ProcessMessage methode zal dat doen voor jou.
+Je haalt zelf het bericht niet uit elkaar (je hoeft dus met andere woorden zelf de string niet te splitten) : deze **ProcessMessage** methode zal dat doen voor jou.
 Wanneer je deze methode oproept dien je 2 argumenten mee te geven : 
   * Het eerste argument is het volledige bericht zelf in string formaat (dus inclusief alle eventuele delimiters)  
   * Het tweede argument is een output parameter van het type string.  De methode zal uit het bericht het ID van de client halen en dit tweede argument hiermee vullen zodat je hier weet om welke client het eigenlijk gaat.  
@@ -64,18 +64,18 @@ De methode retourneert een nullable boolean (bool?).
 Je dient deze retourwaard op te vangen en te bekijken :   
   * Is de retourwaarde null, dan   
     * stuurt de server NIETS naar de client terug  
-    * roep je de bestaande methode PopulateStations op  
+    * roep je de bestaande methode **PopulateStations()** op (deze bevindt zich in je code behind)    
     * zorg je er voor dat geen enkel station geselecteerd staat in cmbStations  
   * Is de retourwaarde false, dan  
     * Stuurt de server de tekst “ERROR#@@#” terug naar de client  
-    * Roep je de bestaande methode PopulateStations op  
-    * Je kijkt na welke waarde in de outputparameter (tweede argument) zit :   
+    * Roep je de bestaande methode **PopulateStations()** op (deze bevindt zich in je code behind)  
+    * Je kijkt na welke waarde in de outputparameter (tweede argument - *stationId*) zit :   
       * Is deze null, dan roep je de methode PopulateStations op en zorg je er voor dat geen enkel station geselecteerd staat in cmbStations  
       * Is deze NIET null, dan roep je de methode PopulateStations op en zorg je er voor dat in cmbStations dit station (client) geselecteerd staat en zorg je er meteen ook voor dat alle panelen van dat station in lstPanels getoond worden.  
   * Is de retourwaarde true, dan  
     * Stuurt de server de tekst “OK#@@#” terug naar de client  
-    * Roep je de bestaande methode PopulateStations op  
-    * Je kijkt na welke waarde in de outputparameter (tweede argument) zit :   
+    * Roep je de bestaande methode **PopulateStations()** op (deze bevindt zich in je code behind)    
+    * Je kijkt na welke waarde in de outputparameter (tweede argument - *stationId*) zit :   
       * Is deze null (wat uiteraard onwaarschijnlijk is), dan roep je de methode PopulateStations op en zorg je er voor dat geen enkel station geselecteerd staat in cmbStations  
       * Is deze NIET null, dan roep je de methode PopulateStations op en zorg je er voor dat in cmbStations dit station (client) geselecteerd staat en zorg je er meteen ook voor dat alle panelen van dat station in lstPanels getoond worden.  
   
