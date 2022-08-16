@@ -80,8 +80,8 @@ Je dient deze retourwaard op te vangen en te bekijken :
       * Is deze NIET null, dan roep je de methode PopulateStations op en zorg je er voor dat in cmbStations dit station (client) geselecteerd staat en zorg je er meteen ook voor dat alle panelen van dat station in lstPanels getoond worden.  
   
 ## Demo met 1 server en 3 solarpanel stations  
- 
-
+  
+<img src="assets/demo.gif">
 
 
 
