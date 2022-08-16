@@ -1,23 +1,27 @@
 # Herexamen AIT  
 
-Algemeen
-In dit programma simuleren we een bedrijf dat verschillende zonnepaneelcentra beheert.
-Dus verspreid over het land zijn een aantal stations (Solarpanel Stations = de clients) waar verschillende zonnepanelen liggen en dus (bij zonlicht) energie opwekken.
-Elk van deze stations maakt verbinding met een centrale applicatie (= de server) waarbij telkens zowel de inventaris van de zonnepanelen wordt doorgestuurd maar eveneens de toestand van de zon in dat station (sunconditions).
- 
-Op de server zelf kan de inventaris van de zonnepanelen per station worden geraadpleegd, de opbrengst uitgedrukt in KWH per station, maar ook alle verbonden stations samen (zie demo onderaan deze pagina).
-De CLIENT applicatie hoef je NIET te programmeren : deze is immers al door mij gemaakt.
-Je kan de uitvoerbare versie van de clientapplicatie hier downloaden (klik op "View raw" in het midden van het venster): het gaat om een ZIP bestand met daarin alle nodige bestanden om de client applicatie te laten draaien. Download het ZIP bestand en pak het uit. Het programma zelf kreeg de naam Ait.SolarPanels.Client.Wpf.exe
- 
-Dit ZIP bestand kan je eveneens terugvinden in de submap assets van de repo die je hier binnengehaald hebt.
+### Algemeen  
+In dit programma simuleren we een bedrijf dat verschillende zonnepaneelcentra beheert.  
+Dus verspreid over het land zijn een aantal stations (Solarpanel Stations = de **clients**) waar verschillende zonnepanelen liggen en dus (bij zonlicht) energie opwekken.  
+Elk van deze stations maakt verbinding met een centrale applicatie (= de **server**) waarbij telkens zowel de inventaris van de zonnepanelen wordt doorgestuurd maar eveneens de toestand van de zon in dat station (**sunconditions**).  
+     
+Op de server zelf kan de inventaris van de zonnepanelen per station worden geraadpleegd, de opbrengst uitgedrukt in KWH per station, maar ook alle verbonden stations samen (zie demo onderaan deze pagina).  
+De CLIENT applicatie hoef je **NIET** te programmeren : deze is immers al door mij gemaakt.  
+Je kan de uitvoerbare versie van de clientapplicatie hier downloaden (klik op "View raw" in het midden van het venster): het gaat om een ZIP bestand met daarin alle nodige bestanden om de client applicatie te laten draaien. Download het ZIP bestand en pak het uit. Het programma zelf kreeg de naam **Ait.SolarPanels.Client.Wpf.exe**  
+  
+*Dit ZIP bestand kan je eveneens terugvinden in de submap assets van de repo die je hier binnengehaald hebt.
 Wanneer je straks in het server-gedeelte begint te programmeren kan je deze client versie (desnoods meerdere keren) opstarten en nakijken of alle communicatie wel naar wens verloopt.
 De repo die je binnenhaalt is dus de SERVER APP
-Ook hier is het grootste deel van de code al geschreven (zowel in de Class Library als in de code behind binnen je WPF).
-Ter herinnering : we programmeren hier het SERVER gedeelte, te weten de software die draait in een “Datacentrum” die op bepaalde tijdstippen informatie van de diverse stations ontvangt.
-Zoals je straks gaat merken is alle code reeds aanwezig om de berichten die de server ontvangt te interpreteren en de centrale informatie bij te werken en bij te houden : dit hoef je dus zelf NIET te doen.
-De opdracht
-Wat moet je dan zelf nog doen ?
-Je dient enkel 2 methoden uit te werken in de code behind van het WPF project (het signatuur van deze methoden is ook al aanwezig en mag niet veranderd worden).  Deze methoden vind je helemaal onderaan je code behind terug…
+Ook hier is het grootste deel van de code al geschreven (zowel in de Class Library als in de code behind binnen je WPF).*  
+  
+Ter herinnering : we programmeren hier het SERVER gedeelte, te weten de software die draait in een **“Datacentrum”** die op bepaalde tijdstippen informatie van de diverse stations ontvangt.  
+Zoals je straks gaat merken is alle code reeds aanwezig om de berichten die de server ontvangt te interpreteren en de centrale informatie bij te werken en bij te houden : dit hoef je dus zelf NIET te doen.  
+  
+### De opdracht  
+  
+Wat moet je dan zelf nog doen ?  
+  
+**Je dient enkel 2 methoden uit te werken in de code behind van het WPF project** *(het signatuur van deze methoden is ook al aanwezig en mag niet veranderd worden)*.  Deze methoden vind je helemaal onderaan je code behind terug…
 •	private void StartListening()
 •	private bool HandleClientCall(Socket clientCall) 
 Let er ook op dat er helemaal bovenaan je code een aantal globale variabelen werden aangemaakt.
