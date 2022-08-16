@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32210.238
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AIT.SolarPanels.Server.Wpf", "AIT.SolarPanels.Server.Wpf\AIT.SolarPanels.Server.Wpf.csproj", "{3EAFB166-8E26-4D05-855A-FDE3E9AAC3A9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AIT.SolarPanels.Server.Core", "AIT.SolarPanels.Server.Core\AIT.SolarPanels.Server.Core.csproj", "{432D019F-021F-4CAF-BFFF-7092398A99A2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3EAFB166-8E26-4D05-855A-FDE3E9AAC3A9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3EAFB166-8E26-4D05-855A-FDE3E9AAC3A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3EAFB166-8E26-4D05-855A-FDE3E9AAC3A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3EAFB166-8E26-4D05-855A-FDE3E9AAC3A9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{432D019F-021F-4CAF-BFFF-7092398A99A2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{432D019F-021F-4CAF-BFFF-7092398A99A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{432D019F-021F-4CAF-BFFF-7092398A99A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{432D019F-021F-4CAF-BFFF-7092398A99A2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E5705E4C-95E6-4DC6-BAB1-6D4DC9CAEE8F}
+	EndGlobalSection
+EndGlobal

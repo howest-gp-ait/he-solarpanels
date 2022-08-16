@@ -1,0 +1,50 @@
+﻿<Window x:Class="AIT.SolarPanels.Server.Wpf.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AIT.SolarPanels.Server.Wpf"
+        mc:Ignorable="d"
+        Title="SOLARPANELS : SERVER" Height="498" Width="800"
+        WindowStartupLocation="CenterScreen" 
+        Loaded="Window_Loaded"
+        Closing="Window_Closing">
+    <Grid>
+        <GroupBox Header="Server configuration" HorizontalAlignment="Center" Height="70" Margin="0,10,0,0" VerticalAlignment="Top" Width="770" >
+            <Grid HorizontalAlignment="Left" Width="770">
+                <ComboBox x:Name="cmbIPs" FontSize="14" FontWeight="Bold" HorizontalAlignment="Left" Margin="46,10,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="CmbIPs_SelectionChanged"/>
+                <Label Content="IP : " FontSize="14" FontWeight="Bold" HorizontalAlignment="Left" Height="28" Margin="10,10,0,0" VerticalAlignment="Top" Width="31"/>
+                <Label Content="Port : " FontSize="14" FontWeight="Bold" HorizontalAlignment="Left" Height="28" Margin="210,7,0,0" VerticalAlignment="Top" Width="57"/>
+                <ComboBox x:Name="cmbPorts" FontSize="14" FontWeight="Bold" HorizontalAlignment="Left" Margin="267,9,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="CmbPorts_SelectionChanged"/>
+                <Button x:Name="btnStartServer" Content="START" Background="ForestGreen" Foreground="White" FontSize="14" FontWeight="Bold" HorizontalAlignment="Left" Margin="424,7,0,0" VerticalAlignment="Top" Height="28" Width="81" Click="BtnStartServer_Click"/>
+                <Button x:Name="btnStopServer" Content="STOP" Background="Tomato" Foreground="White" FontSize="14" FontWeight="Bold" HorizontalAlignment="Left" Margin="510,7,0,0" VerticalAlignment="Top" Height="28" Width="81" Click="BtnStopServer_Click"/>
+
+            </Grid>
+
+        </GroupBox>
+        <GroupBox x:Name="grpPanels" Header="Available stations" HorizontalAlignment="Left" Height="344" Margin="15,100,0,0" VerticalAlignment="Top" Width="333">
+            <Grid>
+                <ListBox x:Name="lstPanels" HorizontalAlignment="Center" Height="229" Margin="0,71,0,0" VerticalAlignment="Top" Width="287"/>
+                <ComboBox x:Name="cmbStations" HorizontalAlignment="Center" Height="34" Margin="0,20,0,0" VerticalAlignment="Top" Width="281" SelectionChanged="CmbStations_SelectionChanged"/>
+            </Grid>
+        </GroupBox>
+        <GroupBox x:Name="grpDetails"  Header="Details" HorizontalAlignment="Left" Height="245" Margin="370,100,0,0" VerticalAlignment="Top" Width="411">
+            <Grid>
+                <Label Content="Station" HorizontalAlignment="Left" Margin="10,20,0,0" VerticalAlignment="Top"/>
+                <Label Content="Station performance" HorizontalAlignment="Left" Margin="10,97,0,0" VerticalAlignment="Top"/>
+                <Label Content="Total performance" HorizontalAlignment="Left" Margin="10,127,0,0" VerticalAlignment="Top"/>
+                <Label x:Name="lblStationId" Content="" Background="OldLace" HorizontalAlignment="Left" Margin="160,20,0,0" VerticalAlignment="Top" Width="176"/>
+                <Label x:Name="lblStationPerformance" HorizontalContentAlignment="Right" Content="" Background="OldLace" HorizontalAlignment="Left" Margin="160,97,0,0" VerticalAlignment="Top" Width="176"/>
+                <Label x:Name="lblTotalPerformance" HorizontalContentAlignment= "Right" Content="" Background="OldLace" HorizontalAlignment="Left" Margin="160,127,0,0" VerticalAlignment="Top" Width="176"/>
+                <Label Content="kWh" HorizontalAlignment="Left" Margin="346,0,0,0" VerticalAlignment="Center"/>
+                <Label Content="kWh" HorizontalAlignment="Left" Margin="346,129,0,0" VerticalAlignment="Top"/>
+                <Label Content="Sunconditions" HorizontalAlignment="Left" Margin="10,53,0,0" VerticalAlignment="Top" Width="123"/>
+                <Slider x:Name="sldSuncondition" IsEnabled="False" HorizontalAlignment="Left" Margin="161,54,0,0" 
+                    AutoToolTipPlacement="TopLeft" AutoToolTipPrecision="0" 
+                    VerticalAlignment="Top" Width="172" Minimum="0" Maximum="100" SmallChange="1" TickFrequency="10" 
+                    LargeChange="10" TickPlacement="TopLeft" Height="39" IsSnapToTickEnabled="True" />
+
+            </Grid>
+        </GroupBox>
+    </Grid>
+</Window>
