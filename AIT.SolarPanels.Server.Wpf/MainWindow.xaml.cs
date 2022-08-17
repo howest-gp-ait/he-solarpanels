@@ -62,7 +62,6 @@ namespace AIT.SolarPanels.Server.Wpf
             serverOnline = true;
             StartListening();
         }
-
         private void BtnStopServer_Click(object sender, RoutedEventArgs e)
         {
             btnStartServer.Visibility = Visibility.Visible;
@@ -81,7 +80,6 @@ namespace AIT.SolarPanels.Server.Wpf
             mainSocket = null;
             mainEndPoint = null;
         }
-
         private void CmbStations_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             lstPanels.ItemsSource = null;
@@ -189,7 +187,6 @@ namespace AIT.SolarPanels.Server.Wpf
             //        er wordt NIETS naar de client teruggestuurd
             //        roep de bestaande methode "PopulateStations" op
             //        zorg er voor dat geen enkel station geselecteerd staat in CmbStations
-            //        onderbreek deze (HandleClient) methode
             //  - is deze retourwaarde = false =>
             //       stuur de tekst "ERROR#@@#" terug naar de client
             //  - is deze retourwaarde = true => 
